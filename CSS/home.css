@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            overflow-x: hidden;
+        }
+
+        /* Body & general styling */
+        body {
+            font-family: Arial, sans-serif;
+            margin-top: 0px; /* Menambah jarak untuk menghindari navbar sticky terpotong */
+            margin:0%;
+            background-image: url(../Foto/tkj1.jpg);
+            background-size: cover;
+            background-attachment: fixed; 
+            font-family: MEB;
+        }
+        @font-face {
+            font-family: 'MEB';
+            src: url('../Font/MEB.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between; /* Menempatkan logo di kiri dan menu di kanan */
+            align-items: center;
+            background-color: #231f69;
+            padding: 10px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 10;
+            color: #fff;
+        }
+
+        .navbar .logo img {
+            height: 100px;
+            width: 320px;
+        }
+
+        /* Menu Links */
+        .nav-links {
+            display: flex;
+            gap: 20px;
+        }
+
+        .nav-links li {
+            list-style: none;
+        }
+
+        .nav-links a {
+            font-size: 10px;
+            color: #fff;
+            text-decoration: none;
+            padding: 100px 13px 5px;
+            line-height: 1.5em;
+            display: block;
+            border-radius: 10px;
+            transition: transform 0.3s ease, color 0.3s ease;
+           
+        }
+
+        .nav-links a:hover {
+            color: #d83d00; 
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            opacity: 1; 
+            transform: translateY(-8px) scale(1.1);
+        }
+
+        /* Hamburger Icon */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            color: #fff;
+        }
+
+        /* Mobile Navbar */
+        .mobile-nav {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            width: 250px;
+            transition: left 0.3s ease;
+            padding-top: 60px;
+            z-index: 999;
+        }
+
+        .mobile-nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .mobile-nav ul li {
+            margin: 20px 0;
+        }
+
+        .mobile-nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            padding: 10px;
+            display: block;
+            transition: background-color 0.3s ease;
+        }
+
+        .mobile-nav ul li a:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .mobile-nav.active {
+                left: 0;
+            }
+            .card1 img, .card2 img, .card3 img, .card4 img, .card5 img {
+        width: 45%;
+        height: 45%;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .card1, .card2, .card3, .card4, .card5 {
+        flex-direction: column;
+        width: 95%;
+      }
+
+      .card1 h3, .card2 h3, .card3 h3, .card4 h3, .card5 h3 {
+        font-size: 18px;
+      }
+
+      .card1 p, .card2 p, .card3 p, .card4 p, .card5 p {
+        font-size: 16px;
+      }
+        }
+
+        /* Responsif untuk perangkat lebih kecil dari 480px, menampilkan 1 kolom */
+        @media (max-width: 480px) {
+            .card1 img, .card2 img, .card3 img, .card4 img, .card5 img {
+        width: 50%;
+        height: 50%;
+      }
+
+      .card-content {
+        padding: 10px;
+      }
+
+      .card1 h3, .card2 h3, .card3 h3, .card4 h3, .card5 h3 {
+        font-size: 16px;
+      }
+
+      .card1 p, .card2 p, .card3 p, .card4 p, .card5 p {
+        font-size: 14px;
+      }
+        }
+
+        /* Container Styling */
+        .container {
+            width: 100%;
+            height: auto; 
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.459);
+        }
+        .card1, .card2, .card3, .card4, .card5 {
+  display: flex;
+  margin: 20px 0;
+  background: #231f69;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: translateY(50px);
+  animation: slideUp 0.8s forwards;
+  width: 90%;
+}
+
+.card1 img, .card2 img, .card3 img, .card4 img, .card5 img {
+  width: 25%;
+  object-fit: cover;
+}
+
+.card-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+}
+
+.card1:nth-child(even), .card2:nth-child(even), .card3:nth-child(even), .card4:nth-child(even), .card5:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.card1 h3, .card2 h3, .card3 h3, .card4 h3, .card5 h3 {
+  margin-bottom: 10px;
+  color: #d83d00;
+}
+
+.card1 p, .card2 p, .card3 p, .card4 p, .card5 p {
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.card1:hover, .card2:hover, .card3:hover, .card4:hover, .card5:hover {
+  transform: translateY(-10px);
+}
+
+@keyframes slideUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* For individual animation delay (if you want to stagger the effect) */
+.card1 {
+  animation-delay: 0s;
+}
+
+.card2 {
+  animation-delay: 0.2s;
+}
+
+.card3 {
+  animation-delay: 0.4s;
+}
+
+.card4 {
+  animation-delay: 0.6s;
+}
+
+.card5 {
+  animation-delay: 0.8s;
+}
+        /* Styling untuk header */
+        @font-face {
+            font-family: 'coalition';
+            src: url('../Font/coalition.ttf') format('truetype');
+        }
+
+        .judul-container {
+            background: linear-gradient( rgba(0, 0, 0, 0.459), rgba(0, 0, 0, 0));
+            color: #d83d00;
+            font-size: 40px;
+            padding: 40px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+            align-items: center;
+            backdrop-filter: blur(50%);
+            font-family: 'coalition', sans-serif;
+            text-shadow: black;
+        }
+        .kaki-container {
+            width: 100%;
+            background: linear-gradient(#00000067, #231f69);
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: relative;
+            bottom: 0;
+            box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.1);
+            font-size: 12px;
+        }
+
+        .kaki-container a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+        .kaki-container a:hover {
+            color: #d83d00;
+            text-decoration: underline;
+        }
